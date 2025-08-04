@@ -45,6 +45,11 @@ export const en = {
         description:
           "A portfolio website that showcases my development skills and projects, using criminal themes and animations. It is built using React, Vite, and Tailwind CSS.",
       },
+      todolist_vue: {
+        title: "TODO LIST VUE",
+        description:
+          "A ToDo List application using Vue.js, Vite, and Tailwind CSS. It features features to add, delete, and update tasks.",
+      },
     },
   },
 

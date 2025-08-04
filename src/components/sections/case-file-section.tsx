@@ -1,3 +1,4 @@
+import { SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -5,6 +6,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+  CardTitle,
 } from "../ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FaGithub } from "react-icons/fa";
@@ -40,8 +42,21 @@ const CaseFilesSection = () => {
       titleKey: "caseFiles.projects.portfolio.title",
       descriptionKey: "caseFiles.projects.portfolio.description",
       image: "/portfolio.png",
-      link: "https://github.com/albantani17/criminal-portfolio",
+      link: {
+        github: "https://github.com/albantani17/criminal-portfolio",
+        website: "https://criminal-portfolio.netlify.app",
+      },
       techStack: ["React", "Vite", "Tailwind CSS", "TypeScript", "Shadcn UI"],
+    },
+    {
+      titleKey: "caseFiles.projects.todolist_vue.title",
+      descriptionKey: "caseFiles.projects.todolist_vue.description",
+      image: "/todolist_vue.png",
+      link: {
+        github: "https://github.com/albantani17/todolist-vue",
+        website: "https://alban-todolist.netlify.app",
+      },
+      techStack: ["Vue", "Vite", "Tailwind CSS", "TypeScript"],
     },
   ];
 
@@ -57,11 +72,13 @@ const CaseFilesSection = () => {
             key={item.image + index}
           >
             <CardHeader>
-              <img
-                src={item.image}
-                alt={t(item.titleKey)}
-                className='w-full object-cover rounded-lg'
-              />
+              <CardTitle>
+                <img
+                  src={item.image}
+                  alt={t(item.titleKey)}
+                  className='w-full object-cover rounded-lg mb-2'
+                />
+              </CardTitle>
               <CardDescription className='w-full flex flex-wrap gap-1'>
                 {item.techStack.map((tech, index) => (
                   <span
@@ -82,17 +99,19 @@ const CaseFilesSection = () => {
               </p>
             </CardContent>
             {item.link !== null && (
-              <CardFooter>
-                <Button className='bg-neutral-700 hover:bg-neutral-600'>
-                  <a
-                    href={item.link}
-                    target='_blank'
-                    className='flex items-center w-full'
-                  >
+              <CardFooter className='flex gap-2'>
+                <a href={item.link.github} target='_blank'>
+                  <Button className='bg-neutral-700 hover:bg-neutral-600 flex items-center w-full cursor-pointer'>
                     <FaGithub />
-                    <span className='ml-2'>Repository</span>
-                  </a>
-                </Button>
+                    <span>Repository</span>
+                  </Button>
+                </a>
+                <a href={item.link.website} target='_blank'>
+                  <Button className='bg-neutral-700 hover:bg-neutral-600 flex items-center w-full cursor-pointer'>
+                    <span>Website</span>
+                    <SquareArrowOutUpRight />
+                  </Button>
+                </a>
               </CardFooter>
             )}
           </Card>

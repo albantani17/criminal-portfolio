@@ -45,6 +45,11 @@ export const id = {
         description:
           "Portfolio website yang menampilkan kemampuan dan proyek saya dalam pengembangan, menggunakan tema kriminal dan animasi. Dibangun menggunakan React, Vite, dan Tailwind CSS.",
       },
+      todolist_vue: {
+        title: "TODO LIST VUE",
+        description:
+          "Aplikasi ToDo List menggunakan Vue.js, Vite, dan Tailwind CSS. Memiliki fitur untuk menambah, menghapus, dan memperbarui tugas.",
+      },
     },
   },
 
