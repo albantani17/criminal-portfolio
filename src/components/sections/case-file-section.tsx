@@ -1,5 +1,13 @@
-import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
+import { Button } from "../ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+} from "../ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { FaGithub } from "react-icons/fa";
 
 const CaseFilesSection = () => {
   const { t } = useLanguage();
@@ -9,14 +17,14 @@ const CaseFilesSection = () => {
       titleKey: "caseFiles.projects.simole.title",
       descriptionKey: "caseFiles.projects.simole.description",
       image: "/simole.png",
-      link: "#",
+      link: null,
       techStack: ["Python", "Flask", "MongoDB", "EasySNMP"],
     },
     {
       titleKey: "caseFiles.projects.koperasi.title",
       descriptionKey: "caseFiles.projects.koperasi.description",
       image: "/kopkar.png",
-      link: "https://www.google.com",
+      link: null,
       techStack: [
         "React",
         "Next.js",
@@ -32,14 +40,8 @@ const CaseFilesSection = () => {
       titleKey: "caseFiles.projects.portfolio.title",
       descriptionKey: "caseFiles.projects.portfolio.description",
       image: "/portfolio.png",
-      link: "https://www.google.com",
-      techStack: [
-        "React",
-        "Vite",
-        "Tailwind CSS",
-        "TypeScript",
-        "Shadcn UI",
-      ],
+      link: "https://github.com/albantani17/criminal-portfolio",
+      techStack: ["React", "Vite", "Tailwind CSS", "TypeScript", "Shadcn UI"],
     },
   ];
 
@@ -79,6 +81,20 @@ const CaseFilesSection = () => {
                 {t(item.descriptionKey)}
               </p>
             </CardContent>
+            {item.link !== null && (
+              <CardFooter>
+                <Button className='bg-neutral-700 hover:bg-neutral-600'>
+                  <a
+                    href={item.link}
+                    target='_blank'
+                    className='flex items-center w-full'
+                  >
+                    <FaGithub />
+                    <span className='ml-2'>Repository</span>
+                  </a>
+                </Button>
+              </CardFooter>
+            )}
           </Card>
         ))}
       </div>
