@@ -10,9 +10,9 @@ const ProfilePicture = () => {
 
       {/* Gambar */}
       <img
-        src='blank-profile.png'
+        src='pp.jpeg'
         alt='profile'
-        className='w-full mt-12 outline-4 outline-neutral-700 p-1'
+        className='w-full mt-12 outline-4 outline-neutral-700 p-1 '
       />
 
       {/* REWARD Section */}
